@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seismic Sensor Dashboard</title>
+    <link href="/css/index.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    <h1>Seismic Sensor Dashboard</h1>
+
+    <div class="view-toggle">
+        <button id="tableViewBtn" class="active" onclick="showTableView()">Table View</button>
+        <button id="mapViewBtn" onclick="showMapView()">Map View</button>
+    </div>
+
+    <div id="tableView" class="table-view">
+        <div id="loading" class="loading">Loading sensors...</div>
+        <div id="error" class="error" style="display: none;"></div>
+        <table id="sensorTable" style="display: none;">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Last Updated</th>
+                <th>Maintenance Mode</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody id="sensorTableBody">
+            </tbody>
+        </table>
+    </div>
+
+    <div id="mapView" class="map-view">
+        <div id="map"></div>
+        <div id="mapSensorInfo"></div>
+    </div>
+</div>
+
+<script src="/js/index.js"></script>
+
+<!-- Leaflet CSS and JS for map functionality -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</body>
+</html>
+
